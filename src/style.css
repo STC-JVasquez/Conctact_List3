@@ -1,3 +1,4 @@
+/* Original styles */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -107,7 +108,7 @@ label {
   margin-top: 10px;
 }
 
-input{
+input {
   padding: 10px;
   margin: 5px 0;
   background-color: #444444;
@@ -130,6 +131,7 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* List styles */
 ul {
   list-style: none;
   padding: 0;
@@ -141,4 +143,59 @@ ul li {
   margin: 10px 0;
   border-radius: 5px;
   color: #ffffff;
+  display: flex;
+  flex-direction: column; /* Align items in a column to allow input fields to be below */
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between; /* Align contact info and buttons */
+  align-items: center;
+  width: 100%;
+}
+
+/* Button group to align to the right */
+.button-group {
+  display: flex;
+  gap: 10px; /* Add space between buttons */
+  justify-content: flex-end;
+}
+
+.edit-btn {
+  background-color: #28a745; /* Green for edit */
+}
+
+.edit-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red for delete */
+}
+
+.delete-btn:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+/* Edit Form Styling */
+.edit-form {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #2e2e2e;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.edit-form input {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+}
+
+/* Ensure form elements stay below the contact-info */
+.editing {
+  display: none; /* Hidden by default */
+}
+
+ul li.editing .edit-form {
+  display: block; /* Show the form when editing */
 }
