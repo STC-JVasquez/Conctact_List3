@@ -2,11 +2,23 @@
 import Header from './components/Header.vue';
 import AddContact from './components/AddContact.vue';
 import ContactList from './components/ContactList.vue';
-import { ref } from 'vue';
 import ContactStats from './components/ContactStats.vue';
+import { ref } from 'vue';
 
-const handleAddContact = (newContact) => {
-  contacts.value.push(newContact)
+const handleAddContact = (contactData) => {
+  contacts.value.push({
+    id: generateID(),
+    name: contactData.name,
+    phone: contactData.phone,
+  })
+}
+
+const handleDeleteContact = (id) => {
+  contacts.value = contacts.value.filter((contact) => contact.id !== id)
+}
+
+const generateID = () => {
+  return Math.floor(Math.random()*10000000)
 }
 
 const contacts = ref([])
